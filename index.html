@@ -113,13 +113,24 @@
         </form>
     </div>
 </div>
-    
-    <!-- 修正したフッター部分 -->
 <footer class="fade-in">
-    <p>© 2025 Daiki Yamamoto All rights reserved. <span id="admin-link" class="admin-link" onclick="document.getElementById('auth-modal').style.display='flex';">Admin</span></p>
+    <p>© 2025 Daiki Yamamoto All rights reserved. <span id="admin-link" class="admin-link" onclick="showAdminModal()">Admin</span></p>
 </footer>
 
 <!-- JavaScriptの読み込み -->
+<script>
+function showAdminModal() {
+    const authModal = document.getElementById('auth-modal');
+    if (authModal) {
+        authModal.style.display = 'flex';
+        const authPassword = document.getElementById('auth-password');
+        if (authPassword) {
+            authPassword.value = '';
+            authPassword.focus();
+        }
+    }
+}
+</script>
 <script src="script.js"></script>
 <script src="auth.js"></script>
 </body>
