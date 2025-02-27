@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
   const adminLink = document.getElementById('admin-link');
   const authModal = document.getElementById('auth-modal');
   const authForm = document.getElementById('auth-form');
@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
   const authCancel = document.getElementById('auth-cancel');
   
   // 管理者パスワード
-  const ADMIN_PASSWORD = 'admin124';
+  const ADMIN_PASSWORD = 'admin123';
   
   // Adminリンククリック時の処理
   if (adminLink && authModal) {
