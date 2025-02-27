@@ -1,3 +1,15 @@
+// 認証状態のチェック
+function checkAdminAuth() {
+  const isAuthenticated = sessionStorage.getItem('isAdminAuthenticated');
+  if (isAuthenticated !== 'true') {
+    // 認証されていない場合はトップページにリダイレクト
+    window.location.href = 'index.html';
+  }
+}
+
+// ページ読み込み時に実行
+checkAdminAuth();
+
 // admin.js - 書籍管理画面のスクリプト
 
 document.addEventListener('DOMContentLoaded', function() {
