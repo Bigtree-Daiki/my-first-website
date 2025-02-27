@@ -113,27 +113,6 @@
         </form>
     </div>
 </div>
-
-    <!-- 認証モーダル表示用スクリプト -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const adminLink = document.getElementById('admin-link');
-  const authModal = document.getElementById('auth-modal');
-  
-  if (adminLink && authModal) {
-    adminLink.addEventListener('click', function() {
-      authModal.style.display = 'flex';
-      
-      // パスワード入力欄にフォーカス
-      const passwordField = document.getElementById('auth-password');
-      if (passwordField) {
-        passwordField.value = '';
-        passwordField.focus();
-      }
-    });
-  }
-});
-</script>
     
     <!-- 修正したフッター部分 -->
 <footer class="fade-in">
