@@ -254,7 +254,7 @@ header nav ul li a:hover::after {
 .sns-icons {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 35px;
   margin-bottom: 30px;
 }
 
