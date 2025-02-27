@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書籍管理 - My Profile</title>
+    <!-- Google Fontsの追加 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="books.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <div class="logo">MY PROFILE</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="#" class="active">管理画面</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="admin" class="admin fade-in">
+        <h2>書籍管理</h2>
+        <p class="section-subtitle">新しい書籍の追加・編集</p>
+
+        <div class="admin-container">
+            <!-- フォームとプレビューのタブ切り替え -->
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="form-tab">入力フォーム</button>
+                <button class="tab-btn" data-tab="preview-tab">プレビュー</button>
+            </div>
+
+            <!-- 入力フォーム -->
+            <div id="form-tab" class="tab-content active">
+                <form id="book-form" class="book-form">
+                    <div class="form-group">
+                        <label for="book-title">タイトル <span class="required">*</span></label>
+                        <input type="text" id="book-title" name="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-author">著者名 <span class="required">*</span></label>
+                        <input type="text" id="book-author" name="author" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-category">カテゴリ <span class="required">*</span></label>
+                        <select id="book-category" name="category" required>
+                            <option value="">選択してください</option>
+                            <option value="business">ビジネス</option>
+                            <option value="self-help">自己啓発</option>
+                            <option value="novel">小説</option>
+                            <option value="technology">テクノロジー</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-cover">書影 <span class="required">*</span></label>
+                        <input type="file" id="book-cover" name="cover" accept="image/*" required>
+                        <div class="cover-preview">
+                            <img id="cover-preview-img" src="placeholder-book.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-summary">概要 <span class="required">*</span></label>
+                        <textarea id="book-summary" name="summary" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-review">感想 <span class="required">*</span></label>
+                        <textarea id="book-review" name="review" rows="8" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="preview-btn" class="btn btn-secondary">プレビュー</button>
+                        <button type="submit" class="btn btn-primary">保存</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- プレビュー -->
+            <div id="preview-tab" class="tab-content">
+                <div class="preview-container">
+                    <div class="modal-preview">
+                        <div class="modal-grid">
+                            <div class="book-details">
+                                <h4>書影</h4>
+                                <div class="modal-book-cover">
+                                    <img id="preview-cover" src="placeholder-book.jpg" alt="">
+                                </div>
+                                <h4>タイトル</h4>
+                                <p id="preview-title">-</p>
+                                <h4>著者名</h4>
+                                <p id="preview-author">-</p>
+                                <h4>カテゴリ</h4>
+                                <span id="preview-category" class="category-tag">-</span>
+                            </div>
+                            <div class="book-content">
+                                <h4>概要</h4>
+                                <div class="content-box">
+                                    <p id="preview-summary">-</p>
+                                </div>
+                                <h4>感想</h4>
+                                <div class="content-box">
+                                    <p id="preview-review">-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions centered">
+                    <button type="button" id="edit-btn" class="btn btn-secondary">編集に戻る</button>
+                    <button type="button" id="save-btn" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+
+            <!-- 書籍一覧 -->
+            <div class="book-list-section">
+                <h3>登録済み書籍</h3>
+                <table class="book-list">
+                    <thead>
+                        <tr>
+                            <th>タイトル</th>
+                            <th>著者</th>
+                            <th>カテゴリ</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-list-body">
+                        <!-- 書籍リストはJavaScriptで動的に生成 -->
+                        <tr>
+                            <td>ビジネス思考力を鍛える</td>
+                            <td>佐藤一郎</td>
+                            <td>ビジネス</td>
+                            <td>
+                                <button class="action-btn edit-btn">編集</button>
+                                <button class="action-btn delete-btn">削除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>自己啓発書のタイトル</td>
+                            <td>山田太郎</td>
+                            <td>自己啓発</td>
+                            <td>
+                                <button class="action-btn edit-btn">編集</button>
+                                <button class="action-btn delete-btn">削除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="fade-in">
+        <p>© 2025 Daiki Yamamoto All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScriptの読み込み -->
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
