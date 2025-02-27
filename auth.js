@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
   const authCancel = document.getElementById('auth-cancel');
   
   // 管理者パスワード
-  const ADMIN_PASSWORD = 'admin123';
+  const ADMIN_PASSWORD = 'admin124';
   
   // Adminリンククリック時の処理
   if (adminLink && authModal) {
