@@ -347,12 +347,21 @@ button[type="submit"]:hover {
   background-color: #2980b9;
 }
 
-/* SNS Icons */
+/* ソーシャルメディアセクションのスタイル */
+.social-media {
+  margin: 20px auto 40px;
+  text-align: center;
+}
+
+.social-media h3 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
 .sns-icons {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 20px;
 }
 
 .sns-icons a {
@@ -367,7 +376,12 @@ button[type="submit"]:hover {
 .sns-icons img {
   width: 40px;
   height: 40px;
-  border-radius: 8px; /* 角を少し丸くする（必要に応じて） */
+}
+
+/* コンタクトフォームのスタイル */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* レスポンシブ対応 */
