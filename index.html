@@ -97,6 +97,23 @@
 </section>
 <footer class="fade-in">
     <p>© 2025 Daiki Yamamoto All rights reserved. <a href="#" id="admin-link" class="admin-link">Admin</a></p>
+    <!-- 認証モーダル -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h3>管理者認証</h3>
+                <p>管理画面にアクセスするにはパスワードを入力してください</p>
+            </div>
+            <form class="auth-form" id="auth-form">
+                <input type="password" id="auth-password" placeholder="パスワード" required>
+                <div class="auth-message" id="auth-message">パスワードが正しくありません</div>
+                <div class="auth-actions">
+                    <button type="button" class="auth-button auth-cancel" id="auth-cancel">キャンセル</button>
+                    <button type="submit" class="auth-button auth-submit">ログイン</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </footer>
 
 <!-- JavaScriptの読み込み -->
