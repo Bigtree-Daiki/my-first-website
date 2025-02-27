@@ -15,14 +15,14 @@
         <div class="logo">MY PROFILE</div>
         <nav>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Works</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section class="hero">
+    <section id="about" class="hero fade-in">
         <div class="intro">
             <h1>つくるものを通して人がつながる</h1>
             <p>新しい価値が生まれ、気持ちや想いが届く。</p>
@@ -30,7 +30,7 @@
         </div>
         <img src="profile.png" alt="プロフィール写真">
     </section>
-    <section class="service">
+    <section id="service" class="service fade-in">
         <h2>Service</h2>
         <div class="service-items">
             <div class="service-box">
@@ -50,7 +50,7 @@
             </div>
         </div>
     </section>
-    <section class="works">
+    <section id="works" class="works fade-in">
         <h2>Works</h2>
         <div class="work-items">
             <img src="work1.jpg" alt="作品1">
@@ -58,9 +58,11 @@
             <img src="work3.jpg" alt="作品3">
         </div>
     </section>
-    <footer>
+    <footer id="contact" class="fade-in">
         <p>© 2025 My Profile. All rights reserved.</p>
     </footer>
-  <script src="animation-js.js"></script>
+
+    <!-- JavaScriptの読み込み -->
+    <script src="script.js"></script>
 </body>
 </html>
