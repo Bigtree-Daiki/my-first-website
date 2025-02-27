@@ -11,18 +11,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <div class="logo">MY PROFILE</div>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="books.html">Books</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <div class="logo">MY PROFILE</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <section id="about" class="hero fade-in">
         <div class="intro">
             <h1>情報コミュニケーションを変えていく</h1>
@@ -95,26 +95,31 @@
         </form>
     </div>
 </section>
+
+<!-- 認証モーダル -->
+<div class="auth-modal" id="auth-modal">
+    <div class="auth-container">
+        <div class="auth-header">
+            <h3>管理者認証</h3>
+            <p>管理画面にアクセスするにはパスワードを入力してください</p>
+        </div>
+        <form class="auth-form" id="auth-form">
+            <input type="password" id="auth-password" placeholder="パスワード" required>
+            <div class="auth-message" id="auth-message">パスワードが正しくありません</div>
+            <div class="auth-actions">
+                <button type="button" class="auth-button auth-cancel" id="auth-cancel">キャンセル</button>
+                <button type="submit" class="auth-button auth-submit">ログイン</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <footer class="fade-in">
     <p>© 2025 Daiki Yamamoto All rights reserved. <a href="#" id="admin-link" class="admin-link">Admin</a></p>
-    <!-- 認証モーダル -->
-    <div class="auth-modal" id="auth-modal">
-        <div class="auth-container">
-            <div class="auth-header">
-                <h3>管理者認証</h3>
-                <p>管理画面にアクセスするにはパスワードを入力してください</p>
-            </div>
-            <form class="auth-form" id="auth-form">
-                <input type="password" id="auth-password" placeholder="パスワード" required>
-                <div class="auth-message" id="auth-message">パスワードが正しくありません</div>
-                <div class="auth-actions">
-                    <button type="button" class="auth-button auth-cancel" id="auth-cancel">キャンセル</button>
-                    <button type="submit" class="auth-button auth-submit">ログイン</button>
-                </div>
-            </form>
-        </div>
-    </div>
 </footer>
 
 <!-- JavaScriptの読み込み -->
 <script src="script.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
