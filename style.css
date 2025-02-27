@@ -256,3 +256,131 @@ footer {
     width: 100%;
   }
 }
+
+/* Contact Section Styles */
+.contact {
+  padding: 80px 10%;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.contact h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  flex: 1 1 60%;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.social-links {
+  flex: 1 1 30%;
+  padding: 20px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form p, .social-links p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+/* SNS Icons */
+.sns-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.sns-icons a {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.sns-icons a:hover {
+  transform: translateY(-5px);
+}
+
+.sns-icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; /* 角を少し丸くする（必要に応じて） */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .contact-form, .social-links {
+    flex: 1 1 100%;
+  }
+  
+  .social-links {
+    margin-top: 40px;
+  }
+}
